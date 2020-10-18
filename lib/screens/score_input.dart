@@ -1,9 +1,6 @@
-import 'team_score_widget.dart';
 import 'package:flutter/material.dart';
-import 'player_score_widget.dart';
-// import 'round_icon_button.dart';
-// import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-// import 'package:basketindex/constants.dart';
+import 'package:basketindex/widgets/team_score_widget.dart';
+import 'package:basketindex/widgets/player_score_widget.dart';
 
 class ScoreInput extends StatefulWidget {
   @override
@@ -18,32 +15,44 @@ class _ScoreInputState extends State<ScoreInput> {
         title: Text('SCORE TRACKING'),
       ),
       body: Column(crossAxisAlignment: CrossAxisAlignment.stretch, children: [
-        PlayerScoreWidget(),
+        PlayerScoreWidget(
+          playerName: 'player 1',
+        ),
         Divider(
           color: Colors.white,
           height: 1.0,
         ),
-        PlayerScoreWidget(),
+        PlayerScoreWidget(
+          playerName: 'player 2',
+        ),
         Divider(
           color: Colors.white,
           height: 1.0,
         ),
-        PlayerScoreWidget(),
+        PlayerScoreWidget(
+          playerName: 'player 3',
+        ),
         Divider(
           color: Colors.white,
           height: 1.0,
         ),
-        PlayerScoreWidget(),
+        PlayerScoreWidget(
+          playerName: 'player 4',
+        ),
         Divider(
           color: Colors.white,
           height: 1.0,
         ),
-        PlayerScoreWidget(),
+        PlayerScoreWidget(
+          playerName: 'player 5',
+        ),
         Divider(
           color: Colors.white,
           height: 1.0,
         ),
-        PlayerScoreWidget(),
+        PlayerScoreWidget(
+          playerName: 'player 6',
+        ),
         Divider(
           color: Colors.white,
           height: 1.0,
@@ -51,11 +60,15 @@ class _ScoreInputState extends State<ScoreInput> {
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            TeamScoreWidget(),
+            TeamScoreWidget(
+              teamName: 'TEAM 1',
+            ),
             SizedBox(
               width: 15.0,
             ),
-            TeamScoreWidget(),
+            TeamScoreWidget(
+              teamName: 'TEAM 2',
+            ),
           ],
         ),
       ]),

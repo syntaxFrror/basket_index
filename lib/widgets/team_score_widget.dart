@@ -1,26 +1,29 @@
 import 'package:flutter/material.dart';
-import 'round_icon_button.dart';
+import 'package:basketindex/stuff&things/round_icon_button.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'constants.dart';
+import 'package:basketindex/stuff&things/constants.dart';
 
 class TeamScoreWidget extends StatefulWidget {
-  const TeamScoreWidget({
-    Key key,
-  }) : super(key: key);
+  final String teamName;
+
+  TeamScoreWidget({@required this.teamName});
 
   @override
-  _TeamScoreWidgetState createState() => _TeamScoreWidgetState();
+  _TeamScoreWidgetState createState() => _TeamScoreWidgetState(teamName);
 }
 
 class _TeamScoreWidgetState extends State<TeamScoreWidget> {
   int teamScore = 0;
+  final String teamName;
+
+  _TeamScoreWidgetState(this.teamName);
 
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
         Text(
-          'Team 1',
+          teamName,
         ),
         Row(
           children: [

@@ -1,19 +1,22 @@
 import 'package:flutter/material.dart';
-import 'round_icon_button.dart';
+import 'package:basketindex/stuff&things/round_icon_button.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'constants.dart';
+import 'package:basketindex/stuff&things/constants.dart';
 
 class PlayerScoreWidget extends StatefulWidget {
-  const PlayerScoreWidget({
-    Key key,
-  }) : super(key: key);
+  final String playerName;
+
+  PlayerScoreWidget({@required this.playerName});
 
   @override
-  _PlayerScoreWidgetState createState() => _PlayerScoreWidgetState();
+  _PlayerScoreWidgetState createState() => _PlayerScoreWidgetState(playerName);
 }
 
 class _PlayerScoreWidgetState extends State<PlayerScoreWidget> {
   int indexScore = 0;
+  final String playerName;
+
+  _PlayerScoreWidgetState(this.playerName);
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +24,7 @@ class _PlayerScoreWidgetState extends State<PlayerScoreWidget> {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
-          Text('player name', style: kPlayerTextStyle),
+          Text(playerName, style: kPlayerTextStyle),
           RoundIconButton(
               icon: FontAwesomeIcons.minus,
               onPressed: () {
