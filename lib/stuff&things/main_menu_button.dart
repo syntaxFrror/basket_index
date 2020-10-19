@@ -11,7 +11,7 @@ class ButtonMainMenu extends StatelessWidget {
     return RawMaterialButton(
       child: Text(
         buttonName,
-        style: TextStyle(fontSize: 20.0),
+        style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold),
       ),
       onPressed: onPressed,
       elevation: 10.0,
@@ -19,7 +19,7 @@ class ButtonMainMenu extends StatelessWidget {
         height: 80.0,
         width: 100.0,
       ),
-      shape: RoundedRectangleBorder(),
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30.0)),
       fillColor: Color(0xFF4c4F5E),
     );
   }
