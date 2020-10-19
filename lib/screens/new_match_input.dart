@@ -103,7 +103,7 @@ class NewMatchInputState extends State<NewMatchInput> {
                 ),
               ),
               ButtonMainMenu(
-                buttonName: 'SUBMIT',
+                buttonName: 'SUBMIT!',
                 onPressed: () {
                   names.add(player1name);
                   names.add(player2name);
