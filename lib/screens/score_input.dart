@@ -1,13 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:basketindex/widgets/team_score_widget.dart';
 import 'package:basketindex/widgets/player_score_widget.dart';
+// import 'package:basketindex/screens/new_match_input.dart';
 
 class ScoreInput extends StatefulWidget {
+  ScoreInput({@required this.names});
+
+  final List<String> names;
+
   @override
-  _ScoreInputState createState() => _ScoreInputState();
+  _ScoreInputState createState() => _ScoreInputState(names);
 }
 
 class _ScoreInputState extends State<ScoreInput> {
+  final List names;
+
+  _ScoreInputState(this.names);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -19,42 +28,42 @@ class _ScoreInputState extends State<ScoreInput> {
         child:
             Column(crossAxisAlignment: CrossAxisAlignment.stretch, children: [
           PlayerScoreWidget(
-            playerName: 'player 1',
+            playerName: names[0],
           ),
           Divider(
             color: Colors.white,
             height: 1.0,
           ),
           PlayerScoreWidget(
-            playerName: 'player 2',
+            playerName: names[1],
           ),
           Divider(
             color: Colors.white,
             height: 1.0,
           ),
           PlayerScoreWidget(
-            playerName: 'player 3',
+            playerName: names[2],
           ),
           Divider(
             color: Colors.white,
             height: 1.0,
           ),
           PlayerScoreWidget(
-            playerName: 'player 4',
+            playerName: names[3],
           ),
           Divider(
             color: Colors.white,
             height: 1.0,
           ),
           PlayerScoreWidget(
-            playerName: 'player 5',
+            playerName: names[4],
           ),
           Divider(
             color: Colors.white,
             height: 1.0,
           ),
           PlayerScoreWidget(
-            playerName: 'player 6',
+            playerName: names[5],
           ),
           Divider(
             color: Colors.white,

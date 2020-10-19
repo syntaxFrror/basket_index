@@ -4,10 +4,19 @@ import 'package:basketindex/stuff&things/main_menu_button.dart';
 
 class NewMatchInput extends StatefulWidget {
   @override
-  _NewMatchInputState createState() => _NewMatchInputState();
+  NewMatchInputState createState() => NewMatchInputState();
 }
 
-class _NewMatchInputState extends State<NewMatchInput> {
+class NewMatchInputState extends State<NewMatchInput> {
+  List<String> names = [];
+
+  String player1name = '';
+  String player2name = '';
+  String player3name = '';
+  String player4name = '';
+  String player5name = '';
+  String player6name = '';
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -29,6 +38,9 @@ class _NewMatchInputState extends State<NewMatchInput> {
               TextField(
                 maxLength: 15,
                 maxLengthEnforced: true,
+                onChanged: (String name) {
+                  player1name = name;
+                },
                 decoration: InputDecoration(
                   hintText: 'Player 1 Name',
                 ),
@@ -36,6 +48,9 @@ class _NewMatchInputState extends State<NewMatchInput> {
               TextField(
                 maxLength: 15,
                 maxLengthEnforced: true,
+                onChanged: (String name) {
+                  player2name = name;
+                },
                 decoration: InputDecoration(
                   hintText: 'Player 2 Name',
                 ),
@@ -43,6 +58,9 @@ class _NewMatchInputState extends State<NewMatchInput> {
               TextField(
                 maxLength: 15,
                 maxLengthEnforced: true,
+                onChanged: (String name) {
+                  player3name = name;
+                },
                 decoration: InputDecoration(
                   hintText: 'Player 3 Name',
                 ),
@@ -57,6 +75,9 @@ class _NewMatchInputState extends State<NewMatchInput> {
               TextField(
                 maxLength: 15,
                 maxLengthEnforced: true,
+                onChanged: (String name) {
+                  player4name = name;
+                },
                 decoration: InputDecoration(
                   hintText: 'Player 4 Name',
                 ),
@@ -64,6 +85,9 @@ class _NewMatchInputState extends State<NewMatchInput> {
               TextField(
                 maxLength: 15,
                 maxLengthEnforced: true,
+                onChanged: (String name) {
+                  player5name = name;
+                },
                 decoration: InputDecoration(
                   hintText: 'Player 5 Name',
                 ),
@@ -71,6 +95,9 @@ class _NewMatchInputState extends State<NewMatchInput> {
               TextField(
                 maxLength: 15,
                 maxLengthEnforced: true,
+                onChanged: (String name) {
+                  player6name = name;
+                },
                 decoration: InputDecoration(
                   hintText: 'Player 6 Name',
                 ),
@@ -78,11 +105,18 @@ class _NewMatchInputState extends State<NewMatchInput> {
               ButtonMainMenu(
                 buttonName: 'SUBMIT',
                 onPressed: () {
+                  names.add(player1name);
+                  names.add(player2name);
+                  names.add(player3name);
+                  names.add(player4name);
+                  names.add(player5name);
+                  names.add(player6name);
+                  print(names);
                   Navigator.push(
                     context,
                     MaterialPageRoute(
                       builder: (context) {
-                        return ScoreInput();
+                        return ScoreInput(names: names);
                       },
                     ),
                   );
