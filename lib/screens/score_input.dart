@@ -1,21 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:basketindex/widgets/team_score_widget.dart';
 import 'package:basketindex/widgets/player_score_widget.dart';
-// import 'package:basketindex/screens/new_match_input.dart';
+import 'package:basketindex/screens/new_match_input.dart';
 
 class ScoreInput extends StatefulWidget {
-  ScoreInput({@required this.names});
+  ScoreInput({this.names, this.trackingScore});
 
   final List<String> names;
+  final int trackingScore;
 
   @override
-  _ScoreInputState createState() => _ScoreInputState(names);
+  ScoreInputState createState() => ScoreInputState(names, trackingScore);
 }
 
-class _ScoreInputState extends State<ScoreInput> {
+class ScoreInputState extends State<ScoreInput> {
   final List names;
+  final int trackingScore;
 
-  _ScoreInputState(this.names);
+  ScoreInputState(this.names, this.trackingScore);
 
   @override
   Widget build(BuildContext context) {
@@ -74,12 +76,16 @@ class _ScoreInputState extends State<ScoreInput> {
             children: [
               TeamScoreWidget(
                 teamName: 'TEAM 1',
+                teamScore: 0,
+                finalScore: trackingScore,
               ),
               SizedBox(
                 width: 15.0,
               ),
               TeamScoreWidget(
                 teamName: 'TEAM 2',
+                teamScore: 0,
+                finalScore: trackingScore,
               ),
             ],
           ),

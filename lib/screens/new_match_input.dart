@@ -8,6 +8,8 @@ class NewMatchInput extends StatefulWidget {
 }
 
 class NewMatchInputState extends State<NewMatchInput> {
+  int finalScore = 16;
+
   List<String> names = [];
 
   String player1name = '';
@@ -21,7 +23,7 @@ class NewMatchInputState extends State<NewMatchInput> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Enter Player Names"),
+        title: Text("Setup Your Game"),
       ),
       body: SingleChildScrollView(
         child: Container(
@@ -102,21 +104,51 @@ class NewMatchInputState extends State<NewMatchInput> {
                   hintText: 'Player 6 Name',
                 ),
               ),
+              SizedBox(
+                height: 15.0,
+              ),
+              Text(
+                'Final Score $finalScore',
+                style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold),
+              ),
+              SliderTheme(
+                data: SliderTheme.of(context).copyWith(
+                  inactiveTrackColor: Color(0xFF8D8e98),
+                  activeTrackColor: Colors.white,
+                  thumbColor: Color(0xFF4c4F5E),
+                  overlayColor: Color(0x35bdbdbd),
+                  thumbShape: RoundSliderThumbShape(enabledThumbRadius: 12.0),
+                  overlayShape: RoundSliderOverlayShape(overlayRadius: 20.0),
+                ),
+                child: Slider(
+                  value: finalScore.toDouble(),
+                  min: 11.0,
+                  max: 21.0,
+                  onChanged: (double newValue) {
+                    setState(() {
+                      finalScore = newValue.round();
+                    });
+                  },
+                ),
+              ),
               ButtonMainMenu(
-                buttonName: 'SUBMIT!',
+                buttonName: 'SUBMIT',
                 onPressed: () {
+                  print(finalScore);
                   names.add(player1name);
                   names.add(player2name);
                   names.add(player3name);
                   names.add(player4name);
                   names.add(player5name);
                   names.add(player6name);
-                  print(names);
                   Navigator.push(
                     context,
                     MaterialPageRoute(
                       builder: (context) {
-                        return ScoreInput(names: names);
+                        return ScoreInput(
+                          names: names,
+                          trackingScore: finalScore,
+                        );
                       },
                     ),
                   );

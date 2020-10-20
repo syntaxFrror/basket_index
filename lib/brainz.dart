@@ -1,18 +1,10 @@
-class PlayerNameInput {
-  PlayerNameInput({this.playerName});
+class CheckScoreBrain {
+  final int finalScore;
+  final int scoreSelected;
 
-  String playerName;
+  CheckScoreBrain({this.finalScore, this.scoreSelected});
 
-  var playersNameList = [
-    'player1',
-    'player2',
-    'player3',
-    'player4',
-    'player5',
-    'player6'
-  ];
-
-  String giveName(x) {
-    return playerName = playersNameList[x];
+  bool checkScore(int finalScore, int scoreSelected) {
+    return (finalScore == scoreSelected);
   }
 }
