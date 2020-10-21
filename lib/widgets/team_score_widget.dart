@@ -4,8 +4,6 @@ import 'package:basketindex/stuff&things/round_icon_button.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:basketindex/stuff&things/constants.dart';
 import 'package:basketindex/brainz.dart';
-import 'package:basketindex/screens/new_match_input.dart';
-import 'package:basketindex/screens/score_input.dart';
 
 class TeamScoreWidget extends StatefulWidget {
   final String teamName;
@@ -24,11 +22,6 @@ class _TeamScoreWidgetState extends State<TeamScoreWidget> {
   int teamScore = 0;
   final finalScore;
   _TeamScoreWidgetState(this.teamName, this.teamScore, this.finalScore);
-
-  // UMESTO OVOGA TREBA MI TRACKING SCORE SA SCORE_INPUT
-  // int finalScore = NewMatchInputState().finalScore;
-
-  // int finalScore = ScoreInput().trackingScore;
 
   CheckScoreBrain checkScore = CheckScoreBrain();
 
@@ -63,8 +56,7 @@ class _TeamScoreWidgetState extends State<TeamScoreWidget> {
                 onPressed: () {
                   setState(() {
                     teamScore++;
-                    print(finalScore);
-                    // OVDE TREBA DA SE POSTAVI TRACKING SCORE umesto FINALSCORE, tj da finalScore == ScoreInput().trackingScore
+                    // Provera dokle je stigao rezultat i da li se poklapa sa izabranim rezultatom sa slajdera
                     if (checkScore.checkScore(teamScore, finalScore)) {
                       Navigator.push(
                         context,

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:basketindex/widgets/team_score_widget.dart';
 import 'package:basketindex/widgets/player_score_widget.dart';
-import 'package:basketindex/screens/new_match_input.dart';
 
 class ScoreInput extends StatefulWidget {
   ScoreInput({this.names, this.trackingScore});
