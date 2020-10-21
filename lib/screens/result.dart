@@ -3,6 +3,15 @@ import 'package:flutter/material.dart';
 import 'package:basketindex/stuff&things/main_menu_button.dart';
 
 class ResultPage extends StatelessWidget {
+  final int team1Score;
+  final int team2Score;
+  final String winnerTeam;
+
+  ResultPage(
+      {@required this.team1Score,
+      @required this.team2Score,
+      @required this.winnerTeam});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -17,7 +26,7 @@ class ResultPage extends StatelessWidget {
           children: [
             Text(
               // Ovde umesto x dodati vrednost (1 ili 2) koji tim
-              'TEAM x WON',
+              '$winnerTeam WON',
               style: TextStyle(
                 fontSize: 40.0,
                 fontWeight: FontWeight.bold,
@@ -28,7 +37,7 @@ class ResultPage extends StatelessWidget {
               style: TextStyle(fontSize: 20.0),
             ),
             Text(
-              '11 : 9',
+              '$team1Score : $team2Score',
               style: TextStyle(fontSize: 30.0),
             ),
             SizedBox(

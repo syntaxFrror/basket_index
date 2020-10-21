@@ -35,22 +35,22 @@ class MainMenu extends StatelessWidget {
             SizedBox(
               height: 10.0,
             ),
-            ButtonMainMenu(
-              buttonName: 'History',
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) {
-                      return ResultPage();
-                    },
-                  ),
-                );
-              },
-            ),
-            SizedBox(
-              height: 10.0,
-            ),
+            // ButtonMainMenu(
+            //   buttonName: 'History',
+            //   onPressed: () {
+            //     Navigator.push(
+            //       context,
+            //       MaterialPageRoute(
+            //         builder: (context) {
+            //           return ResultPage();
+            //         },
+            //       ),
+            //     );
+            //   },
+            // ),
+            // SizedBox(
+            //   height: 10.0,
+            // ),
             ButtonMainMenu(
               buttonName: 'About',
               onPressed: () {

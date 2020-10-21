@@ -16,6 +16,9 @@ class ScoreInputState extends State<ScoreInput> {
   final List names;
   final int trackingScore;
 
+  int team1Score = 0;
+  int team2Score = 0;
+
   ScoreInputState(this.names, this.trackingScore);
 
   @override
@@ -75,16 +78,22 @@ class ScoreInputState extends State<ScoreInput> {
             children: [
               TeamScoreWidget(
                 teamName: 'TEAM 1',
-                teamScore: 0,
-                finalScore: trackingScore,
+                teamScore: team1Score,
+                trackingScore: trackingScore,
+                team1Score: team1Score,
+                team2Score: team2Score,
+                winnerTeam: 'TEAM 1',
               ),
               SizedBox(
                 width: 15.0,
               ),
               TeamScoreWidget(
                 teamName: 'TEAM 2',
-                teamScore: 0,
-                finalScore: trackingScore,
+                teamScore: team2Score,
+                trackingScore: trackingScore,
+                team1Score: team1Score,
+                team2Score: team2Score,
+                winnerTeam: 'TEAM 2',
               ),
             ],
           ),
