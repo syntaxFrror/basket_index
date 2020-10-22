@@ -1,4 +1,3 @@
-import 'package:basketindex/screens/result.dart';
 import 'package:flutter/material.dart';
 import 'dart:io';
 import 'package:basketindex/stuff&things/main_menu_button.dart';

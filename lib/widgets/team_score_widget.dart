@@ -30,8 +30,8 @@ class _TeamScoreWidgetState extends State<TeamScoreWidget> {
   final String teamName;
   var teamScore;
   final trackingScore;
-  final team1Score;
-  final team2Score;
+  var team1Score;
+  var team2Score;
   final winnerTeam;
 
   _TeamScoreWidgetState(this.teamName, this.teamScore, this.trackingScore,
@@ -70,6 +70,7 @@ class _TeamScoreWidgetState extends State<TeamScoreWidget> {
                 onPressed: () {
                   setState(() {
                     teamScore++;
+
                     print(team1Score);
                     print(team2Score);
                     print(teamScore);
